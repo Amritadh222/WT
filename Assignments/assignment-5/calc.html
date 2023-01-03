@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Calculator</title>
+  <style type="text/css">
+    .wrapper {
+      height: 65%;
+      width: 26.686450%;
+      margin: auto;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      background-color: gray;
+    }
+    .blank {
+      height: 70px;
+      width: 80%;
+      position: relative;
+      top: 10px;
+      left: 10%;
+    }
+    .left {
+      left: 0px;
+    }
+    .right {
+      right: 0px;
+    }
+    input {
+      background-color:black;
+      width: 100%;
+      height: 100%;
+      border: none;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      font-size: 75px;
+    }
+    div {
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+    }
+    .key {
+      position: relative;
+      display: inline-block;
+      top: 40px;
+      height: 75px;
+      width: 85px;
+      left: 0px;
+      right: 0px;
+      font-size: 75px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .key:hover {
+      background-color:black;
+    }
+  
+
+  </style>
+</head>
+<body>
+  <div>
+    <div class="wrapper">
+      <div class="blank">
+        <input type="text" id="textField">
+      </div>
+      <div class="key left" onclick="display(1)">1</div>
+      <div class="key" onclick="display(2)">2</div>
+      <div class="key" onclick="display(3)">3</div>
+      <div class="key right" onclick="displaysym('+')" id="textField_sym">+</div>
+      <div class="key left" onclick="display(4)">4</div>
+      <div class="key" onclick="display(5)">5</div>
+      <div class="key" onclick="display(6)">6</div>
+      <div class="key right" onclick="displaysym('-')" id="textField_sym">-</div>
+      <div class="key left" onclick="display(7)">7</div>
+      <div class="key" onclick="display(8)">8</div>
+      <div class="key" onclick="display(9)">9</div>
+      <div class="key right" onclick="displaysym('*')" id="textField_sym">*</div>
+      <div class="key left" onclick="display(0)">0</div>
+      <div class="key" onclick="displaysym('.')" id="textField_sym">.</div>
+            <div class="key" onclick="equal()">=</div>
+      <div class="key" onclick="divide()">/</div>
+    </div>
+  </div>
+  <script>
+    function display(num) {
+      
+      var textField = document.getElementById("textField");
+      textField.value += num;
+    }
+    
+    function displaysym(sym) {
+      
+      var textField = document.getElementById("textField");
+      textField.value += sym;
+    }
+    
+    function equal() {
+      var textField = document.getElementById("textField");
+      textField.value = eval(textField.value);
+    }
+    
+    function divide(){
+      var textField = document.getElementById("textField");
+      
+      textField.value = textField.value / 100;
+    }
+    
+    function clearScreen() {
+      var textField = document.getElementById("textField");
+      
+      textField.value = "";
+    }
+  </script>
+</body>
+</html>
