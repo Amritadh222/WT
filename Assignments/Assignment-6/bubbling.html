@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Event bubbling</title>
+</head>
+<body>
+<div id="div1" onclick="div1Handler(event)">
+  <p id="p1" onclick="p1Handler(event)">
+    <button id="button1" onclick="button1Handler(event)">Click me!</button>
+  </p>
+</div>
+
+<script>
+
+
+  function button1Handler(event) {
+    console.log("Button clicked!");
+    event.stopPropagation();  
+
+  
+  function p1Handler(event) {
+    console.log("p clicked!");
+  }
+
+  
+  function div1Handler(event) {
+    console.log("div clicked!");
+  }
+  
+  
+  document.addEventListener("click", function(event) {
+    console.log("Click event captured!");
+  }, true);
+</script>
+
+</body>
+</html>
