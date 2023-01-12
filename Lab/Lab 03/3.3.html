@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sum of Prime numbers between 1 to 50</title>
+</head>
+<body>
+	<input type="string" id="textField" placeholder="Click on Display">
+	<button onclick="display()"> Click to Display the Sum of Prime numbers between 1 to 50</button>
+
+	<script type="text/javascript">
+	function display(){
+		let p=0,sum=0;
+			for (let i =  2; i< 50; i++) {
+    			for (let j=2; j <=i/2; j++) {
+    				if (i%j==0) {
+    					p=1;
+    					break;
+    				}
+    			}
+    			if(p==0){
+    					sum=sum+i;
+    				}
+    			p=0;
+
+    		}
+    		document.getElementById("textField").value=sum;
+
+    }
+    </script>
+</body>
+</html>
