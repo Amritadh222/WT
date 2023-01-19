@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onblur Event</title>
+    <style>
+      body {
+        background-color: rgb(25, 30, 55);
+      }
+      fieldset {
+        padding-top: 20px;
+        height: 200px;
+        width: 300px;
+        background-color: rgb(61, 112, 31);
+        margin: auto;
+        margin-top: 300px;
+      }
+      h3 {
+        color: red;
+        position: absolute;
+        bottom: 100px;
+        left: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <form action="action.php">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" onblur="blurAction('name')" /><br /><br />
+        <label for="roll">Enter roll no:</label>
+        <input
+          type="number"
+          id="roll"
+          onblur="blurAction('roll')"
+        /><br /><br />
+        <label for="phn">Enter phone num:</label>
+        <input type="number" id="phn" onblur="blurAction('phn')" /><br /><br />
+        <label for="add">Enter address:</label>
+        <input type="text" id="add" onblur="blurAction('add')" />
+      </form>
+    </fieldset>
+    <h3 id="demo"></h3>
+    <script>
+      function blurAction(y) {
+        let x = document.getElementById(y);
+        checkNumber(x);
+        checkEmptyOrNot(x);
+      }
+      function checkNumber(x) {
+        x.value = x.value.toUpperCase();
+      }
+      function checkEmptyOrNot(x) {
+        if (x.value == "") {
+          document.getElementById("demo").textContent =
+            "you can't leave blank there!...";
+        } else {
+          document.getElementById("demo").textContent = "";
+        }
+      }
+    </script>
+  </body>
+</html>
+<!-- Write JS function to validate a form input field for onblur event whether it is blank or not and contains number or not. -->

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Page Load Events in JS</title>
+</head>
+
+<body>
+    <script>
+        addEventListener('DOMContentLoaded', (event) => {
+            return('The DOM is fully loaded.');
+        });
+
+        addEventListener('load', (event) => {
+            return('The page is fully loaded.');
+        });
+
+        addEventListener('beforeunload', (event) => {
+            event.preventDefault();
+            event.returnValue = '';
+        });
+
+        addEventListener('unload', (event) => {
+        });
+    </script>
+</body>
+</html>
